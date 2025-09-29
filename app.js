@@ -4,18 +4,17 @@ const heroCards = Array.from(heroCardsNodes);
 function positionCards() {
     let offset = -1;
     heroCards.forEach((card, index) => {
-        card.style.transform = `translateX(${(offset + index) * 135}%)`;
+        card.style.transform = `translateX(${(offset + index) * 150}%)`;
+        card.style.transition = '';
     });
+
+    heroCards[heroCards.length - 1].style.transition = 'none';
+
 }
 
 positionCards();
 
-let startIndex = 0;
 setInterval(() => {
-    let transitionTmp = heroCards[0].style.transition;
-    heroCards[0].style.transition = 'none';
     heroCards.push(heroCards.shift());
-    heroCards[0].style.transition = transitionTmp;
-
     positionCards();
 }, 5000);
