@@ -1,3 +1,7 @@
+* {
+    font-size: 20px;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
@@ -8,8 +12,9 @@ body {
 .hero {
     position: relative;
     width: 100%;
-    height: 20rem;
+    height: 100vh;
     overflow: hidden;
+    align-content: center;
 
     h1 {
         font-family: 'Poppins', sans-serif;
@@ -17,6 +22,8 @@ body {
         font-weight: 700;
         letter-spacing: -0.04em;
         line-height: 1.2;
+        display: inline-block;
+        padding-right: .2rem;
     }
 
     .hero-fixed {
@@ -25,7 +32,6 @@ body {
         align-content: center;
         position: relative;
         display: inline-block;
-        padding-right: .5rem;
         text-align: right;
     }
 
@@ -38,30 +44,29 @@ body {
         justify-content: start;
         opacity: 0;
 
-        .gradient-text-wrapper {
+        .hero-element-wrapper {
             width: 50%;
             height: 100%;
             align-content: center;
             display: inline-block;
 
             h1 {
+                display: inline-block;
                 position: relative;
-                width: fit-content;
-                color: transparent;
-                background-clip: text;
-                background-image: linear-gradient(90deg, #f46289, #747DF2);
                 transform: translateX(4rem);
                 opacity: 0;
                 transition: transform 1s ease-in-out, opacity 1s ease-in-out;
             }
-        }
 
-        img {
-            position: relative;
-            display: inline-block;
-            transform: translateX(4rem);
-            opacity: 0;
-            transition: transform .8s ease-in-out, opacity 1s ease-in-out;
+            img {
+                height: 40%;
+                align-content: center;
+                position: relative;
+                display: inline-block;
+                transform: translateX(4rem);
+                opacity: 0;
+                transition: transform .8s ease-in-out, opacity 1s ease-in-out;
+            }
         }
     }
 }
@@ -71,18 +76,27 @@ body {
         transition: none;
         opacity: 1;
 
-        .gradient-text-wrapper {
+        .hero-element-wrapper {
             h1 {
                 opacity: 1;
                 transform: translateX(0);
                 transition: transform 1.6s ease-out, opacity 1.2s ease-in;
             }
+
+            img {
+                opacity: 1;
+                transform: translateX(0);
+                transition: transform 1.1s ease-out, opacity 1.2s ease-in;
+            }
         }
 
-        img {
-            opacity: 1;
-            transform: translateX(0);
-            transition: transform 1.1s ease-out, opacity 1.2s ease-in;
-        }
+
     }
+}
+
+.gradient-text {
+    width: fit-content;
+    color: transparent;
+    background-clip: text;
+    background-image: linear-gradient(90deg, #f46289, #747DF2);
 }
