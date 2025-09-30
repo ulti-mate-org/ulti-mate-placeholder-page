@@ -4,11 +4,9 @@ const heroCards = Array.from(heroCardsNodes);
 function positionCards() {
     let offset = -1;
     heroCards.forEach((card, index) => {
+        card.classList.toggle('visible', index === 1);
         card.style.transform = `translateX(${(offset + index) * 150}%)`;
-        card.style.transition = '';
     });
-
-    heroCards[heroCards.length - 1].style.transition = 'none';
 
 }
 

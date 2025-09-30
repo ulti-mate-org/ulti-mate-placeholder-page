@@ -9,7 +9,7 @@ body {
     position: relative;
     width: 100%;
     height: 20rem;
-    /*overflow: hidden;*/
+    overflow: hidden;
 
     h1 {
         font-family: 'Poppins', sans-serif;
@@ -30,12 +30,13 @@ body {
     }
 
     .hero-card {
+        transition: transform 3s ease-in-out, opacity .2s ease-out;
         position: absolute;
         width: 65%;
         height: 100%;
         display: inline-flex;
         justify-content: start;
-        transition: transform .7s ease-in-out;
+        opacity: 0;
 
         .gradient-text-wrapper {
             width: 50%;
@@ -44,15 +45,44 @@ body {
             display: inline-block;
 
             h1 {
+                position: relative;
                 width: fit-content;
                 color: transparent;
                 background-clip: text;
                 background-image: linear-gradient(90deg, #f46289, #747DF2);
+                transform: translateX(4rem);
+                opacity: 0;
+                transition: transform 1s ease-in-out, opacity 1s ease-in-out;
             }
         }
 
         img {
+            position: relative;
             display: inline-block;
+            transform: translateX(4rem);
+            opacity: 0;
+            transition: transform .8s ease-in-out, opacity 1s ease-in-out;
+        }
+    }
+}
+
+.hero {
+    .hero-card.visible {
+        transition: none;
+        opacity: 1;
+
+        .gradient-text-wrapper {
+            h1 {
+                opacity: 1;
+                transform: translateX(0);
+                transition: transform 1.6s ease-out, opacity 1.2s ease-in;
+            }
+        }
+
+        img {
+            opacity: 1;
+            transform: translateX(0);
+            transition: transform 1.1s ease-out, opacity 1.2s ease-in;
         }
     }
 }
