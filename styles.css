@@ -124,6 +124,7 @@ body {
     background-image: linear-gradient(90deg, #f46289, #747DF2);
 }
 
+
 .glow {
     position: absolute;
     display: inline-block;
@@ -150,11 +151,63 @@ body {
 
 @media (max-width: 1650px) {
     * {
-        font-size: 14px;
-        --hero-fixed-width: 40%;
+        font-size: 16px;
+        --hero-fixed-width: 42%;
     }
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 1360px) {
+    * {
+        --hero-fixed-width: 60%;
+    }
+    .hero {
+        .hero-card {
+            flex-direction: column;
+            transition: none;
+
+            .hero-element-wrapper {
+
+                h1 {
+                    position: absolute;
+                    top: 20%;
+                    opacity: 0;
+                }
+            }
+
+            .hero-img {
+                flex: 0;
+                height: 0;
+                transform: translateX(-100%);
+            }
+        }
+    }
+
+
+    .hero {
+        .hero-fixed {
+            position: relative;
+            display: inline-flex;
+            align-items: start;
+
+            top: 20%;
+        }
+
+        .hero-card.visible {
+            transition: none;
+
+            .hero-element-wrapper {
+                h1 {
+                    position: absolute;
+                    top: 20%;
+                }
+
+                .img-wrapper {
+                    transform: translateY(-16rem);
+                    width: 16rem;
+
+                }
+            }
+        }
+    }
 
 }
