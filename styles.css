@@ -28,13 +28,25 @@ body {
         padding-right: .2rem;
     }
 
+    .text-scramble {
+        position: absolute;
+        left: 0;
+        transform: translateY(4rem);
+    }
+
     .hero-fixed {
         width: var(--hero-fixed-width);
         height: 100%;
-        align-content: center;
         position: relative;
-        display: inline-block;
-        text-align: right;
+        display: inline-flex;
+        align-items: center;
+        justify-content: right;
+        padding-right: .3rem;
+
+        .fixed-text-wrapper {
+            position: relative;
+            width: fit-content;
+        }
     }
 
     .hero-card {
@@ -122,6 +134,11 @@ body {
     background: radial-gradient(ellipse, #747DF2, transparent 70%);
     filter: blur(400px);
     z-index: -1;
+}
+
+.dud {
+    font-size: 3rem;
+    font-weight: 600;
 }
 
 @media (max-width: 2000px) {
